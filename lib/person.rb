@@ -12,13 +12,31 @@ end
 
 
 class Partier < Person
+  attr_reader :alive
 
   def initialize name=('a'..'z').to_a.sample(5).join
     super name
+    @drank = 0
+    @alive = true
   end
 
   def to_s
     "'Heeeellloooooooo there!', says #{@name.capitalize}"
+  end
+
+  def drink
+    if @alive
+       @drank += 1
+
+      if @drank >= 40
+        @alive = false
+      end
+    end
+    @drank
+  end
+
+  def bal
+    @drank / 100.0
   end
 
   def test
