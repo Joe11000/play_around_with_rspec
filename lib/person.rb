@@ -52,27 +52,27 @@ class Partier < Person
   end
 
 
-  def say_block unless_param, &sentence
+  def say_block unused_param, &sentence
     sentence.call
   end
 
-  def say_proc unless_param, &sentence
+  def say_proc unused_param, &sentence
     sentence.call
   end
 
-  def say_lambda useless_param, &sentence
+  def say_lambda unused_param, &sentence
     sentence.call
   end
 
-  def say_block_yield unless_param
+  def say_block_yield unused_param
     yield
   end
 
-  def say_proc_yield unless_param
+  def say_proc_yield unused_param
     yield
   end
 
-  def say_lambda_yield useless_param
+  def say_lambda_yield unused_param
     yield
   end
 end
