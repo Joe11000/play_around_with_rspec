@@ -1,20 +1,16 @@
 require_relative '../lib/person'
 
 describe Person do
-  context 'class' do
-    context 'instance of ' do
-
-      it '#to_s' do
-        expect(described_class.new.to_s).to be
-      end
-    end
-  end
-
   context 'instance' do
-    context 'initialize' do
-      it 'default intialize' do
+    context '#initialize' do
+      it 'default' do
         expect(described_class.new 'Paul').to be_a Person
       end
+    end
+
+    it '#to_s' do
+      p = described_class.new
+      expect(p.to_s).to eq "what's up, #{p.name}?"
     end
   end
 end

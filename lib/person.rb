@@ -10,7 +10,6 @@ class Person
   end
 end
 
-
 class Partier < Person
   attr_reader :alive
 
@@ -50,7 +49,6 @@ class Partier < Person
   def provoke
     raise 'You got punched in the face'
   end
-
 
   def say_block unused_param, &sentence
     sentence.call
